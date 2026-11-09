@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento Locativo PWA</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+    <header>
+        <h1>Mantenimiento Locativo</h1>
+        <nav>
+            <button onclick="cambiarVista('personal')">Módulo 1: Personal</button>
+            <button onclick="cambiarVista('operaciones')">Módulo 2: Operaciones</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- VISTA MÓDULO 1: PERSONAL -->
+        <section id="vista-personal" class="vista">
+            <h2>Gestión de Hojas de Vida y Personal</h2>
+            <form id="form-personal">
+                <input type="text" id="p-documento" placeholder="Documento de Identidad" required>
+                <input type="text" id="p-cargo" placeholder="Cargo (Ej: Operario)" required>
+                <input type="text" id="p-telefono" placeholder="Teléfono">
+                <button type="submit">Registrar Personal</button>
+            </form>
+            <h3>Listado de Personal</h3>
+            <ul id="lista-personal"></ul>
+        </section>
+
+        <!-- VISTA MÓDULO 2: OPERACIONES -->
+        <section id="vista-operaciones" class="vista" style="display:none;">
+            <h2>Programación y Seguimiento</h2>
+            <div id="contenedor-asignaciones">
+                <p>Cargando asignaciones...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alerta flotante de confirmación -->
+    <div id="alerta-flotante">¡Guardado con éxito!</div>
+
+    <!-- Script principal -->
+    <script type="module" src="/src/app.js"></script>
+</body>
+</html>
